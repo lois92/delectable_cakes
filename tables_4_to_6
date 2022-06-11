@@ -1,0 +1,49 @@
+-- table 4 Customization table - Colour of icing, tiers, writing
+-- table 5 Date of when cake is needed
+-- table 6 Surplus to price & cake size
+
+CREATE DATABASE delectable_cakes;
+
+USE delectable_cakes;
+
+CREATE TABLE customise (
+icing_colour VARCHAR(15),
+tiers INT,
+writing VARCHAR(100));
+
+CREATE TABLE date_required (
+customer_id INT NOT NULL,
+cake_id INT NOT NULL,
+date1 DATE NOT NULL);
+
+CREATE TABLE size (
+customer_id INT NOT NULL,
+cake_id INT NOT NULL,
+size VARCHAR(10),
+surcharge FLOAT);
+
+INSERT INTO customise (
+icing_colour, tiers, writing)
+VALUES
+('Blue', 1, 'Happy Birthday!'),
+('Pink', 1, 'Happy Birthday!'),
+('White', 2, NULL),
+('White', 3, NULL);
+
+-- Am i right in thinking I need the customer IDs and cake IDs to use for my date the cake is required and size of cake table?
+INSERT INTO date_required (
+customer_id, cake_id, date1)
+VALUES 
+(, , 2022-06-22),
+(, , 2022-06-23),
+(, , 2022-06-24),
+(, , 2022-06-25),
+(, , 2022-06-26),
+(, , 2022-06-27)
+
+INSERT INTO size ( 
+customer_id, cake_id, size, surcharge)
+VALUES
+(, , 'Small', 0),
+(, , 'Medium', 3),
+(, , 'Large', 6)
