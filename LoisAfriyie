@@ -1,0 +1,80 @@
+-- table 7 - Allergens
+-- table 8 - Delivery or pick up
+-- table 9 - Expiry
+
+
+-- table 7 - Allergens
+CREATE DATABASE delectable_cakes; 
+
+USE delectable_cakes; 
+CREATE TABLE Allergens ( 
+customer_id INT NOT NULL,
+first_name varchar(50) NOT NULL,
+last_name varchar (50),
+Allergies varchar (50), 
+Diet_requirements varchar (50) 
+);
+
+INSERT INTO Allergens
+(customer_id, first_name, last_name, Allergies, Diet_requirements)
+VALUES 
+
+(721906,'Melissa',' Smith ', 'Wheat', 'GlutenFree'),
+(513980, 'Theodore', 'Hall','Egg', 'DairyFree'),
+(280462, 'Sarah','Martin','Egg' , 'DairyFree'  ),
+(166094, 'Eli','Young','Milk', 'DairyFree'),
+(452652, 'Grace', 'King','Butter', 'DairyFree' ),    
+(991327, 'Robert','Moore','Yeast', 'YeastFree'),
+(338213, 'Maisie', 'Turner', 'Wheat', 'GlutenFree'), 
+(825563, 'George','Cook','Wheat', 'GlutenFree'),
+(288461, 'Felicity','Walker','Egg', 'DairyFree'),
+(909336, 'Lola','Green', 'Butter', 'DairyFree'); 
+
+-- table 8 - Delivery or pick up
+USE delectable_cakes;
+CREATE TABLE Collection_Type ( 
+customer_id INT NOT NULL, 
+cake_id char (50) NOT NULL, 
+collection_type varchar (50) NOT NULL,
+collect_date date
+);
+
+
+INSERT INTO Collection_Type 
+(customer_id, cake_id, collection_type,collect_date)
+VALUES
+(721906,'RV-8720','Pickup','2022-02-09'),
+(513980,'CH-6124','Delivery','2022-03-01'),
+(280462,'CA-5591','Uberpickup','2022-02-08'),
+(166094,'VA-2158','Pickup','2022-02-09'),
+(452652,'CH-9027','Delivery','2022-02-01'),
+(991327,'RV-3864','Delivery','2022-02-02'),
+(338213,'CA-6798','Pickup','2022-02-04'),
+(825563,'VA-5129','Pickup','2022-03-20'),
+(288461,'VA-1542','Delivery','2022-02-05'),
+(909336,'RV-7746','Uberpickup','2022-02-13');
+
+-- table 9 - Expiry
+
+USE delectable_cakes;
+CREATE TABLE Expiry( 
+cake_id INT NOT NULL, 
+ALLERGY varchar (50),
+Expiry_date date);
+
+INSERT INTO EXPIRY 
+(cake_id, Allergy,expiry_date)
+VALUES 
+(721906,'Wheat','2022-02-18'),
+(513980,'Egg', '2022-03-10'),
+(280462, 'Egg', '2022-02-11'),
+(166094, 'Milk', '2022-04-01'),
+(452652, 'Butter', '2022-02-20' ),    
+(991327, 'Yeast', '2022-02-21'),
+(338213, 'Wheat', '2022-02-13'), 
+(825563,  'Wheat', '2022-02-25'),
+(288461, 'Egg', '2022-03-01'),
+(909336, 'Butter', '2022-02-13'); 
+
+
+
